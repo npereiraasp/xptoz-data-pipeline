@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: public
+    database: xptoz_db
+    schema: public
+    tables:
+      - name: users_info

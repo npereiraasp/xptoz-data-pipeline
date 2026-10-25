@@ -1,0 +1,57 @@
+[0m16:28:49.340984 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BB5863E9F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BB55535D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BB585C4BC0>]}
+
+
+============================== 16:28:49.361855 | aaaa3536-e375-4664-bc00-93827dbe7de0 ==============================
+[0m16:28:49.361855 [info ] [MainThread]: Running with dbt=1.13.0-b1
+[0m16:28:49.362853 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\Zyon\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'invocation_command': 'dbt init dbt_xptoz', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'logs'}
+[0m16:28:49.363757 [debug] [MainThread]: Tracking: tracking
+[0m16:28:49.491432 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\Zyon\.dbt
+[0m16:28:49.491432 [debug] [MainThread]: Starter project path: C:\Users\Zyon\Documents\xptoz-data-pipeline\venv\Lib\site-packages\dbt\include\starter_project
+[0m16:28:49.523428 [info ] [MainThread]: Setting up your profile.
+[0m16:29:33.081648 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+
+[0m16:29:33.095312 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\Zyon\Documents\xptoz-data-pipeline\venv\Lib\site-packages\dbt\cli\requires.py", line 211, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Zyon\Documents\xptoz-data-pipeline\venv\Lib\site-packages\dbt\cli\requires.py", line 157, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Zyon\Documents\xptoz-data-pipeline\venv\Lib\site-packages\dbt\cli\main.py", line 505, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "C:\Users\Zyon\Documents\xptoz-data-pipeline\venv\Lib\site-packages\dbt\task\init.py", line 363, in run
+    self.setup_profile(profile_name)
+  File "C:\Users\Zyon\Documents\xptoz-data-pipeline\venv\Lib\site-packages\dbt\task\init.py", line 265, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "C:\Users\Zyon\Documents\xptoz-data-pipeline\venv\Lib\site-packages\dbt\task\init.py", line 182, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "C:\Users\Zyon\Documents\xptoz-data-pipeline\venv\Lib\site-packages\dbt\task\init.py", line 166, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Zyon\Documents\xptoz-data-pipeline\venv\Lib\site-packages\dbt\task\init.py", line 132, in generate_target_from_input
+    target[key] = click.prompt(
+                  ^^^^^^^^^^^^^
+  File "C:\Users\Zyon\Documents\xptoz-data-pipeline\venv\Lib\site-packages\click\termui.py", line 262, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Zyon\Documents\xptoz-data-pipeline\venv\Lib\site-packages\click\termui.py", line 245, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m16:29:33.097213 [debug] [MainThread]: Command `dbt init` failed at 16:29:33.097213 after 43.88 seconds
+[0m16:29:33.097871 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BB55C6FB60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BB591396A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BB585C4BC0>]}
+[0m16:29:33.098879 [debug] [MainThread]: Flushing usage events
+[0m16:29:33.948969 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:29:47.913948 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B97AECD6A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B97DD9ECF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B97DE3EB10>]}
+
+
+============================== 16:29:47.917711 | c6f85765-198f-45db-96b8-2153af996e51 ==============================
+[0m16:29:47.917711 [info ] [MainThread]: Running with dbt=1.13.0-b1
+[0m16:29:47.917711 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Zyon\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'invocation_command': 'dbt init dbt_xptoz', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'logs'}
+[0m16:29:47.917711 [debug] [MainThread]: Tracking: tracking
+[0m16:29:47.931361 [info ] [MainThread]: A project called dbt_xptoz already exists here.
+[0m16:29:47.933078 [debug] [MainThread]: Command `dbt init` succeeded at 16:29:47.933078 after 0.13 seconds
+[0m16:29:47.933078 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B97DE3EB10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B97DB3E3F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B97F7DA840>]}
+[0m16:29:47.934121 [debug] [MainThread]: Flushing usage events
+[0m16:29:48.734285 [debug] [MainThread]: An error was encountered while trying to flush usage events

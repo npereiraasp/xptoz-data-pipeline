@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: marts_email_domains
+    description: "Tabela consolidada com os domínios de e-mail e respetivos totais de registos."
+    columns:
+      - name: dominio_email
+        tests:
+          - unique
+          - not_null
+      - name: total_registros
+        tests:
+          - not_null
