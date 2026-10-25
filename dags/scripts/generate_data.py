@@ -4,11 +4,11 @@ import psycopg2
 from faker import Faker
 
 DB_CONFIG = {
-    "host": "localhost",
-    "user": "postgres",
-    "password": "postgres",
+    "host": "postgres",
+    "user": "airflow",
+    "password": "airflow",
     "port": "5432",
-    "dbname": "xptoz_db"
+    "dbname": "airflow"
 }
 
 def conectar_banco():
@@ -24,7 +24,7 @@ def criar_tabela():
     if conn:
         cursor = conn.cursor()
         cursor.execute("""
-            CREATE TABLE IF NOT EXISTS users_info (
+            CREATE TABLE IF NOT EXISTS public.users_info (
                 id SERIAL PRIMARY KEY,
                 nome VARCHAR(100),
                 email VARCHAR(100) UNIQUE,
@@ -35,7 +35,7 @@ def criar_tabela():
         conn.commit()
         cursor.close()
         conn.close()
-        print("Tabela 'users_info' criada/verificada com sucesso.")
+        print("Tabela 'public.users_info' criada/verificada com sucesso.")
 
 def gerar_dados(qtd=1000):
     fake = Faker("pt_BR")
@@ -54,7 +54,7 @@ def inserir_dados(dados):
     if conn:
         cursor = conn.cursor()
         query = """
-            INSERT INTO users_info (nome, email, idade, cidade)
+            INSERT INTO public.users_info (nome, email, idade, cidade)
             VALUES (%s, %s, %s, %s)
             ON CONFLICT (email) DO NOTHING;
         """

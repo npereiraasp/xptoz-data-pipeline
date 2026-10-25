@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='table'
+    )
+}}
+
 SELECT
     id,
     UPPER(nome) AS nome,
@@ -6,4 +12,4 @@ SELECT
     UPPER(cidade) AS cidade,
     NOW() AS created_at,
     NOW() AS updated_at
-FROM {{ source('public', 'users_info') }}
+FROM public.users_info
