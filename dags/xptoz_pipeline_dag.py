@@ -14,9 +14,8 @@ default_args = {
 with DAG(
     'xptoz_daily_pipeline',
     default_args=default_args,
-    description='Pipeline de dados diário para ingestão e execução dos modelos DBT (XPTOZ)',
-    schedule_interval='@daily',  # Executa automaticamente uma vez ao dia
-    start_date=datetime(2026, 1, 1),
+    description='Pipeline for XPTOZ data engineering challenge',
+    schedule='@daily',         # <-- Atualizado para a nova versão do Airflow
     catchup=False,
 ) as dag:
 
